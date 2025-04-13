@@ -1,0 +1,29 @@
+DeepSeek
+
+Act as a seasoned Lead Analyst and decompose this document into granular action items.
+
+ChatGPT
+
+Act like a Senior Software Engineer with extensive experience in scripting languages and help me understand the structure of this code. How can I extend its capabilities with new features?
+
+Cursor
+
+Problem Analysis Phase
+
+->   The data processor needs to handle values with unit suffixes. Where in the codebase should I add support for these units? I see a numeric token class - should I follow a similar design?
+->   For duration values like '150ms', would modifying the grammar definition conflict with existing number parsing? Need to check how string and number tokens are defined.
+->   Found a token definition file - looks like new unit types need to implement parsing logic in their own classes. How would unit types like size and duration differ from the existing numeric token in implementation?
+->   Stuck on the grammar definition: added a new unit token but getting conflicts. How do I properly structure fragments for units (like K/M) without breaking existing rules?
+->   Testing unit parsing: should '10k' (lowercase) be valid? The specification isn't clear - what's the project's convention for unit case sensitivity?
+->   For a specific data processing directive, how does the execution context handle data records? Need to see how a grouping mechanism stores intermediate values.
+->   The grammar tool generates parser code but throws errors on values with units. Are my lexer priorities wrong? Here's the relevant grammar snippet: `<snippet>`
+->   The unit test fails on decimal values ('1.5M') - should we support floating-point numbers or enforce integers like other tokens do?
+->   The integration test fails with 'Unknown token' - did I miss registering the token type somewhere in the token definition file?
+
+Other
+
+->   Check my code against the style guide in this codebase and make the necessary changes.
+
+Gemini
+
+Investigate the root cause of a `<generic error>` error and explore potential solutions.
